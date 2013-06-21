@@ -1,6 +1,19 @@
-define(["jquery", "jquery.alpha", "jquery.beta"], function($) {
-    //the jquery.alpha.js and jquery.beta.js plugins have been loaded.
-    $(function() {
+define([
+
+    // load jQuery first
+    "jquery",
+
+    // html5 shim
+    "modernizr-2.5.3.min",
+
+    // jQuery plugins
+    "jquery.alpha",
+    "jquery.beta"
+
+], function($)
+{
+    $(function()
+    {
         $('body').alpha().beta();
     });
 });
