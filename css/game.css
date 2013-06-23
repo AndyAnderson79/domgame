@@ -1,0 +1,138 @@
+
+
+#gameViewport
+{
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-position: 0px 0px;
+
+}
+/*
+    #backgrounddiv
+    {
+        width: 960px;
+        height: 640px;
+        position: absolute;
+        background-image: url(../media/elements/duskysky.jpg);
+    }
+*/
+#scene
+{
+    position: absolute;
+}
+/*
+			#topLayer
+			{
+				width: 960px;
+				height: 640px;
+				position: absolute;
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+		*/
+/*
+			.shaggyAnim
+			{
+				width:80px;
+				height:150px;
+				position: relative;
+				background-image: url(../media/spritesheets/shaggy_walkcycle.png);
+			}
+			.scoobyAnim
+			{
+				width:90px;
+				height:150px;
+				position: relative;
+				background-image: url(../media/spritesheets/scooby_walkcycle.png);
+			}
+			.velmaAnim
+			{
+				width:80px;
+				height:150px;
+				position: relative;
+				background-image: url(../media/spritesheets/velma_walkcycle.png);
+			}
+			.daphneAnim
+			{
+				width:80px;
+				height:150px;
+				position: relative;
+				background-image: url(../media/spritesheets/daphne_walkcycle.png);
+			}
+			.fredAnim
+			{
+				width:90px;
+				height:150px;
+				position: relative;
+				background-image: url(../media/spritesheets/fred_walkcycle.png);
+			}
+*/
+.wrapper
+{
+    left:-999px;
+    position: absolute;
+}
+
+/*
+			.ghostBaddieAnim
+			{
+				width:150px;
+				height:300px;
+				position: absolute;
+				background-image: url(../media/spritesheets/ghost_cycle_150x300.png);
+			}
+			.zombieBaddieAnim
+			{
+				width:150px;
+				height:300px;
+				position: absolute;
+				background-image: url(../media/spritesheets/zombie_cycle_150x300.png);
+			}
+			.wolfmanBaddieAnim
+			{
+				width:200px;
+				height:300px;
+				position: absolute;
+				background-image: url(../media/spritesheets/wolf_cycle_200x300.png);
+			}
+*/
+.boxingGloveContainer
+{
+    width:66px;
+    height:165px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.movingPlatformBlank
+{
+    width:100px;
+    height:20px;
+    position: absolute;
+}
+/*
+.impactSmoke
+{
+    width:250px;
+    height:40px;
+    position: absolute;
+    background-image: url(../media/spritesheets/impactSmoke_250x40.png);
+}
+*/
+
+/*
+.fallingBarrel
+{
+    width:118px;
+    height:571px;
+    position: absolute;
+    background-image: url(../media/elements/FallingBarrelBlock.png);
+}
+*/
+.fallingBlockSquare
+{
+    width:136px;
+    height:136px;
+    position: absolute;
+}

@@ -2,11 +2,13 @@
 //
 // Configure loading modules from the lib directory,
 // except 'app' ones,
-requirejs.config({
+requirejs.config(
+{
     "baseUrl": "js/lib",
     "paths": {
         "app": "../app",
-        "jquery": "//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min"
+        "jquery": "//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min",
+        "modernizr": "modernizr-2.5.3.min"
     }
 });
 
