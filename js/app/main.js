@@ -2,6 +2,7 @@
 var PREFIX_PATH = "";
 var MEDIA_PATH = PREFIX_PATH + "media/";
 var USING_HOWLER = true;
+var USING_SOUNDSPRITES = false;
 var IS_MOBILE_DEVICE = true;
 var IS_DESKTOP_BARLESQUE = true;
 var MOUSE_ACTIVE = true;
@@ -13,8 +14,14 @@ var gameContainer = null;
 define([
     "jquery",
     "modernizr",
+    "app/utils/BrowserDetect",
+    "app/Configuration",
+    "app/GameParams",
+    "app/AssetList",
+    "app/AssetParser",
+    "app/scene/Levels",
     "PxLoader",
-    "app/utils/BrowserDetect"
+    "Stats"
 ], function($)
 {
     // instantiate jQuery plugins
@@ -123,20 +130,35 @@ define([
 
     requirejs([
         // 3rd-party libraries
-        "PxLoader",
         "PxLoaderImage",
-        "Stats",
         soundManagerToLoad,
 
         // app
         "app/init",
-        "app/AssetList",
-        "app/AssetParser",
-        "app/Configuration",
-        "app/GameParams",
 
         "app/display/DisplayFactory",
         "app/display/DisplayObject",
+
+        "app/elements/AttachedImage",
+        "app/elements/Blocker",
+        "app/elements/Bouncer",
+        "app/elements/BuilderFunctions",
+        "app/elements/Cage",
+        "app/elements/Character",
+        "app/elements/CollapsingPlatform",
+        "app/elements/DoorBlocker",
+        "app/elements/DrawDebug",
+        "app/elements/ElementFunctions",
+        "app/elements/Exit",
+        "app/elements/FallingBlock",
+        "app/elements/LethalToTouch",
+        "app/elements/MovingPlatform",
+        "app/elements/NPCBaddie",
+        "app/elements/Pickup",
+        "app/elements/SignAnim",
+        "app/elements/Spike",
+        "app/elements/Switch",
+        "app/elements/TriggeredAnim",
 
         "app/managers/DialogManager",
         "app/managers/DivTweenManager",
@@ -147,10 +169,20 @@ define([
         "app/managers/ScreenManager",
         "app/managers/SoundManager",
 
-        "app/scene/Levels",
+        "app/scene/BuildScene",
 
+        "app/screens/CharacterSelectScreen",
+        "app/screens/GameCompletedDialog",
+        "app/screens/GameScreen",
+        "app/screens/InstructionsDialog",
+        "app/screens/LandingScreen",
+        "app/screens/LevelCompleteDialog",
+        "app/screens/LevelSelectScreen",
         "app/screens/LoaderScreen",
+        "app/screens/PauseMenuDialog",
         "app/screens/RotateOverlay",
+        "app/screens/StageCompleteDialog",
+        "app/screens/StageSelectScreen",
 
         "app/utils/Edge",
         "app/utils/Intersection",
