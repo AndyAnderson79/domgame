@@ -1,6 +1,8 @@
 
 var PREFIX_PATH = "";
 var MEDIA_PATH = PREFIX_PATH + "media/";
+var SOUNDMANAGER_LIB_URL = PREFIX_PATH + "js/lib/soundmanager2.js";
+var HOWLER_LIB_URL = PREFIX_PATH + "js/lib/howler.js";
 var USING_HOWLER = true;
 var USING_SOUNDSPRITES = false;
 var IS_MOBILE_DEVICE = true;
@@ -30,16 +32,20 @@ define([
         //$('body').alpha().beta();
     });
 
+    var isTouchDevice = function() { return 'ontouchstart' in window || 'onmsgesturechange' in window; };
+
+    IS_MOBILE_DEVICE = (window.screenX == 0 && isTouchDevice()) ? true : false;
+
     var soundManagerToLoad;
 
-    if ((BrowserDetect.browser == "Explorer" && BrowserDetect.version < 9))
+    if (!IS_MOBILE_DEVICE && BrowserDetect.browser === "Explorer" && BrowserDetect.version < 9)
     {
         IS_IE7_OR_8 = true;
         USING_HOWLER = false;
 
-        soundManagerToLoad = "soundmanager2";
+        soundManagerToLoad = SOUNDMANAGER_LIB_URL;
 
-        if(document.getElementById('blq-container-inner'))
+        if (document.getElementById('blq-container-inner'))
         {
             var iframeLink = document.createElement('iframe');
             iframeLink.setAttribute('id', 'if');
@@ -59,11 +65,17 @@ define([
         }
         else IS_INSIDE_IFRAME = true;
     }
-    else soundManagerToLoad = "howler";
+    else soundManagerToLoad = HOWLER_LIB_URL;
 
     if (!IFRAME_CREATED)
     {
         var loadcss = document.createElement('link');
+        loadcss.setAttribute("rel", "stylesheet");
+        loadcss.setAttribute("type", "text/css");
+        loadcss.setAttribute("href", PREFIX_PATH + "css/reset.css");
+        document.getElementsByTagName("head")[0].appendChild(loadcss);
+
+        loadcss = document.createElement('link');
         loadcss.setAttribute("rel", "stylesheet");
         loadcss.setAttribute("type", "text/css");
         loadcss.setAttribute("href", PREFIX_PATH + "css/interface.css");
@@ -74,10 +86,6 @@ define([
         loadcss.setAttribute("type", "text/css");
         loadcss.setAttribute("href", PREFIX_PATH + "css/game.css");
         document.getElementsByTagName("head")[0].appendChild(loadcss);
-
-        //Mobile device?
-        var isTouchDevice = function() { return 'ontouchstart' in window || 'onmsgesturechange' in window; };
-        IS_MOBILE_DEVICE = (window.screenX == 0 && isTouchDevice()) ? true : false;
 
         gameContainer = document.createElement("div");
         gameContainer.id = "gameContainer";
@@ -110,9 +118,9 @@ define([
                 IS_DESKTOP_BARLESQUE = true;
             }
             else
-            {//Not barlesque - testing mode
+            {
                 document.body.appendChild(gameContainer);
-                gameContainer.style.width = "960px"; //Using HD
+                gameContainer.style.width = "960px";
                 gameContainer.style.height = "640px";
 
                 IS_DESKTOP_BARLESQUE = false;

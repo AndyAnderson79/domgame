@@ -28,7 +28,6 @@ function ScalingManager()
             gameContainer.style.width = assetSets.SD.width+"px";
             gameContainer.style.height = assetSets.SD.height+"px";
 
-            updateGameParams();
         }
         else
         {
