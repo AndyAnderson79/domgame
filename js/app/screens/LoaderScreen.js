@@ -7,18 +7,27 @@ function LoaderScreen()
     this.manager = null;
     this.parent = null;
     this.intervalID = 0;
+    this.loaderBarLoaded = null;
     this.count = 0;
     this.tens = null;
     this.units = null;
 
     this.handleAdded =  function()
     {
-        //Background
+        // background
         var bg =  displayFactory.getElementByRef("loading_screen").object;
         bg.id = "loading_screen";
         document.getElementById('bgHolder').appendChild(bg);
 
-        //Percentage counter
+        // loader bar
+        var loaderBar = this.createDiv("loaderBar");
+        this.parent.appendChild(loaderBar);
+        loaderBar.appendChild(displayFactory.getElementByRef("loader_image").object);
+
+        this.loaderBarLoaded = loaderBar.appendChild(displayFactory.getElementByRef("loader_image_loaded").object);
+        this.loaderBarLoaded.style.width = "0%";
+
+        // percentage counter
         var pc = this.parent.appendChild(displayFactory.getElementByRef("percentage").object);
         pc.id = "pc";
 
@@ -59,6 +68,8 @@ function LoaderScreen()
     //Update progress of asset load
     this.displayUpdate = function()
     {
+        scope.loaderBarLoaded.style.width = loadManager.percentageComplete + "%";
+
         var tensResult = Math.floor(loadManager.percentageComplete / 10);
         var unitsResult = Math.floor(loadManager.percentageComplete - tensResult * 10);
 
@@ -69,23 +80,18 @@ function LoaderScreen()
         setNumber(unitsResult, scope.units);
     };
 
-    //
     this.finish = function()
     {
         scope.gotoScreen(LandingScreen);
-        //scope.gotoScreen(IntroCartoonScreen);
     };
 
     this.handleRemoved =  function()
     {
-
         this.removeDiv("tens");
         this.removeDiv("units");
-        /*this.removeDiv("scoobydoo_logo");
         this.removeDiv("loaderBar");
-        this.removeDiv("hotdog_mustard"); //this is the full colour hotdog
-        this.removeDiv("hotdog_loader"); //this is the greyed out hotdog
-        this.removeDiv("cbbcLogo");*/
+        this.removeDiv("loader_image");
+        this.removeDiv("loader_image_loaded");
         this.removeDiv("pc");
         this.removeDiv("loading_screen");
 
@@ -112,7 +118,7 @@ function LoaderScreen()
         this.name = null;
         this.manager = null;
         this.parent = null;
-        //this.hotdogBar = null;
+        this.loaderBarLoaded = null;
         this.requestAnimationFrame = null;
 
         scope = null;

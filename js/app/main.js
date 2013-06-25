@@ -183,6 +183,7 @@ define([
         "app/screens/GameCompletedDialog",
         "app/screens/GameScreen",
         "app/screens/InstructionsDialog",
+        "app/screens/IntroCartoonScreen",
         "app/screens/LandingScreen",
         "app/screens/LevelCompleteDialog",
         "app/screens/LevelSelectScreen",

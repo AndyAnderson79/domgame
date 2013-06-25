@@ -9,19 +9,19 @@ function LandingScreen()
 
     this.handleAdded = function()
     {
-        var bg = displayFactory.getElementByRef("start_screen").object;
+        var bg = displayFactory.getElementByRef("loading_screen").object;
         bg.id = "start_screen";
         document.getElementById('bgHolder').appendChild(bg);
 
         gameContainer.appendChild(this.parent);
 
-        /*if (IS_MOBILE_DEVICE) this.parent.appendChild(displayFactory.getElementByRef("exitButton").object);
+        if (IS_MOBILE_DEVICE) this.parent.appendChild(displayFactory.getElementByRef("exitButton").object);
         muteBtn = this.parent.appendChild(displayFactory.getElementByRef("muteButton").object);
         sndManager.initMuteButton(muteBtn);
-        this.parent.appendChild(displayFactory.getElementByRef("scoobydoo_logo").object);
 
+        this.parent.appendChild(displayFactory.getElementByRef("game_logo").object);
         this.parent.appendChild(displayFactory.getElementByRef("playButton").object);
-        this.parent.appendChild(displayFactory.getElementByRef("howToPlayButton").object);*/
+        //this.parent.appendChild(displayFactory.getElementByRef("howToPlayButton").object);
 
         sndManager.stopAllSounds();
     };
@@ -30,10 +30,10 @@ function LandingScreen()
     {
         if (IS_MOBILE_DEVICE) this.removeDiv("exitButton");
 
-        /*this.removeDiv("scoobydoo_logo");
+        this.removeDiv("game_logo");
         this.removeDiv("muteButton");
         this.removeDiv("playButton");
-        this.removeDiv("howToPlayButton");*/
+        //this.removeDiv("howToPlayButton");
         this.removeDiv("start_screen");
 
         displayFactory.finishWithAllElementsInUse();
@@ -74,15 +74,15 @@ function LandingScreen()
 
             case "playButton":
 
-                this.gotoScreen(CharacterSelectScreen);
-
                 sndManager.playSound("buttonClick");
+
+                this.gotoScreen(CharacterSelectScreen);
 
                 break;
 
             case "howToPlayButton":
 
-                this.manager.dialogManager.open(InstructionsDialog, {});
+                //this.manager.dialogManager.open(InstructionsDialog, {});
 
                 sndManager.playSound("buttonClick");
 

@@ -11,7 +11,7 @@ function buildBlocker(posX, posY, width, height)
 function initPlayer(scene)
 {
     //console.log("INITING PLAYER");
-    var chars=["shaggy", "scooby","velma", "fred", "daphne",];
+    var chars=["shockwave", "scooby","velma", "fred", "daphne",];
     var chosenChar = chars[selectedCharacter]+"_walkcycle";
     //if(player) displayFactory.finishWithElementInUseByRef(player.spritesheet.wrapper, chosenChar);
     var playerAsset = displayFactory.getElementByRef(chosenChar);

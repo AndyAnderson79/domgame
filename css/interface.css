@@ -13,7 +13,7 @@
 
 .loadingImage
 {
-    background: url(../dev_assets/loading.png) 0 0 no-repeat;
+    background: url(../media/hd/screens/loading.png) 0 0 no-repeat;
     width:252px;
     height:55px;
     position: absolute;
@@ -129,7 +129,7 @@
     width:23%;
     height:14.7%;
     left:38%;
-    top:48%;
+    top:45%;
 }
 
 
