@@ -1,7 +1,7 @@
 var level1_0 = [
     { type: "reference", title: "Introduction level: Learning the ropes", ref: "level1_0" },
     { type: "worldInit", worldWidth: 1800, worldHeight: 960 },
-    //{ type: "playerInit", posX: 200, posY: 860, velX: 4, velY: 0 },
+    { type: "playerInit", posX: 200, posY: 860, velX: 4, velY: 0 },
     { ref: "background01", type: "overlayImage", url: "media/elements/background01_tile.png", posX: -300, posY: 400, width: 1408, height: 440 },
     { ref: "background01", type: "overlayImage", url: "media/elements/background01_tile.png", posX: 1108, posY: 400, width: 1408, height: 440 },
     { ref: "floortile", type: "overlayImage", url: "media/elements/floortile.png", posX: 0, posY: 40, width: 473, height: 120 },
@@ -35,8 +35,8 @@ var level1_0 = [
     { character: "daphne", ref: "cottoncandy_pickup", name: "pickup3", type: "pickup", posX: 1270, posY: 740, cellwidth: 60, cellheight: 60, numCells: 6,  bbwidth: 60, bbheight: 60, speed: 0.16 },
     { character: "fred", ref: "pop_pickup", name: "pickup1", type: "pickup", posX: 500, posY: 750, cellwidth: 60, cellheight: 60, numCells: 6,  bbwidth: 60, bbheight: 60, speed: 0.16 },
     { character: "fred", ref: "pop_pickup", name: "pickup2", type: "pickup", posX: 790, posY: 750, cellwidth: 60, cellheight: 60, numCells: 6,  bbwidth: 60, bbheight: 60, speed: 0.16 },
-    { character: "fred", ref: "pop_pickup", name: "pickup3", type: "pickup", posX: 1150, posY: 750, cellwidth: 60, cellheight: 60, numCells: 6,  bbwidth: 60, bbheight: 60, speed: 0.16 },
+    { character: "fred", ref: "pop_pickup", name: "pickup3", type: "pickup", posX: 1150, posY: 750, cellwidth: 60, cellheight: 60, numCells: 6,  bbwidth: 60, bbheight: 60, speed: 0.16 },*/
     { name: "line1", type: "line", edges: { type: "line", points: [0, worldHeight - 1, worldWidth + 1, worldHeight - 1] } },
-    { name: "line2", type: "line", edges: { type: "onewayline", points: [0, 880, 1800, 880] } },*/
+    { name: "line2", type: "line", edges: { type: "onewayline", points: [0, 880, 1800, 880] } },
     { ref: "exit_clown", name: "exit1", type: "exitLevel", classname: "exit", posX: 1650, posY: 570, cellwidth: 163, cellheight: 294, numCells: 1, bbwidth: 100, bbheight: 100, bbOffsetX: 60, bbOffsetY: 50 }
 ];

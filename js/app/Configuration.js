@@ -37,7 +37,7 @@ var downIsDown = false;
 
 // dev
 var doScroll = true;
-var doDebug = true;
+var doDebug = false;
 var doTrace = true;
 var audioOn = false;
 var CONTROL_TYPE = "rings";
