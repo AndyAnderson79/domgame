@@ -107,7 +107,7 @@ function initListeners()
         document.addEventListener("gestureend", gestureHandler, true);
     }
 
-    var touchable = 'createTouch' in document;
+    var touchable = ("createTouch" in document);
 
     if (!touchable)
     {

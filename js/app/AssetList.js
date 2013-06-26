@@ -55,7 +55,7 @@ var assetList =
 
         // character spritesheets
         { name: "shaggy_walkcycle", url: "spritesheets/shaggy_walkcycle.png", type: "spritesheet", width: 960, height: 1200, columns: 12, rows: 8 },
-        { name: "shockwave_walkcycle", url: "spritesheets/shockwave_walkcycle.png", type:"spritesheet", width: 960, height: 460, columns: 4, rows: 1 },
+        { name: "shockwave_walkcycle", url: "spritesheets/shockwave_walkcycle.png", type:"spritesheet", width: 480, height: 320, columns: 4, rows: 2 },
 
         // misc
         { name: "levelBox1", url: "stage_level/level_box_1.png", type: "BGDiv", width: 136, height: 180, columns: 2, rows: 1, multiple: 30 },

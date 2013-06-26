@@ -1,5 +1,9 @@
+// var spritesheet = new Spritesheet(playerAsset.img, playerAsset.width, playerAsset.height, playerAsset.columns, playerAsset.rows, wrapper, -49, -130, 0.3, "image" );
+
 function Spritesheet(sheet, sheetWidth, sheetHeight, cellsPerStrip, numStrips, wrapper, offsetX, offsetY, speed, renderType)
 {
+    var roundX;
+
     this.sheet = sheet;
     this.width = sheetWidth;
     this.height = sheetHeight;
@@ -10,22 +14,21 @@ function Spritesheet(sheet, sheetWidth, sheetHeight, cellsPerStrip, numStrips, w
     this.offsetY = offsetY;
     this.posX = 0;
     this.posY = 0;
-    this.origSpeed=speed;
+    this.origSpeed = speed;
     this.speed = speed;
     this.renderType = renderType || "background";
     this.dirOffsetY = 0;
     this.prevPosX = 0;
     this.prevPosY = 0;
 
-    var roundX;
-
     this.setWrapperPosition = function(posX, posY)
     {
-        //BODGE FIX - need to find out why posY is becoming NaN
         var toX = (posX + this.offsetX) * RENDER_RATIO;
         var toY = (posY + this.offsetY) * RENDER_RATIO;
 
+        // BODGE FIX - need to find out why posY is becoming NaN
         if (!posY) posY = 0;
+
         if (this.wrapper)
         {
             //Only render if necessary

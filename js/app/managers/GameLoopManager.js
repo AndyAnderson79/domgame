@@ -1,5 +1,3 @@
-
-
 function GameLoopManager()
 {
     var scope = this;

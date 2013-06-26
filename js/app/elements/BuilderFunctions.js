@@ -1,4 +1,3 @@
-
 function buildBlocker(posX, posY, width, height)
 {
     var blocker = new Blocker(posX, posY, width, height);
@@ -21,9 +20,14 @@ function initPlayer(scene)
     scene.appendChild(wrapper);
     wrapper.appendChild(playerAsset.img);
     //Spritesheet(sheet,sheetWidth,sheetHeight, cellsPerStrip, numStrips, wrapper, offsetX, offsetY, speed, renderType)
-    var spritesheet = new Spritesheet(playerAsset.img, playerAsset.width, playerAsset.height, playerAsset.columns, playerAsset.rows, wrapper, -49, -130, 0.3, "image" );
+    var spritesheet = new Spritesheet(playerAsset.img, playerAsset.width, playerAsset.height, playerAsset.columns, playerAsset.rows, wrapper, -49, -130, 0.1, "image" );
     //Character(posn,velocity, bbWidth,bbHeight, bbOffsetX, bbOffsetY, spritesheet)
-    player = new Character(new Point(0, 0), new Point(4,0), 30, 120, 5, 20, spritesheet);
+
+    console.log("spritesheet: ", spritesheet);
+
+    player = new Character(new Point(0, 0), new Point(4, 0), 30, 120, 5, 20, spritesheet);
+
+    console.log("player: ", player);
     //wrapper.appendChild(character);
     spritesheet.render(true); //Force a spritesheet render - BODGE to force fix starting levels facing wrong direction.
 
